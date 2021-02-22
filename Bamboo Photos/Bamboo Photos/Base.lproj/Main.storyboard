@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fdO-Nm-41n">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="Ehz-1e-ZXf" userLabel="PHOTOS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I5r-H3-jbf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="z7C-wv-puV"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -29,7 +29,7 @@
             <objects>
                 <viewController id="CMU-BB-dpW" userLabel="RandomPicture" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Thy-vG-1BA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="qUv-oO-60K"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -45,23 +45,99 @@
             <objects>
                 <viewController id="bVz-AE-ave" userLabel="MAIL" customClass="EmailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ke6-RM-W20">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="F6N-52-3dP">
+                                <rect key="frame" x="10" y="10" width="394" height="98"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NOM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P7h-la-uvt">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-MAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcO-D1-rn9">
+                                        <rect key="frame" x="0.0" y="34" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="NQu-Sy-8ln">
+                                        <rect key="frame" x="0.0" y="68" width="394" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HW-hh-FYX">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                                <color key="backgroundColor" red="0.45794465410000001" green="0.46246821090000001" blue="1" alpha="0.85107608720000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="xQb-wy-FSh"/>
+                                                </constraints>
+                                                <state key="normal" title="Enviar"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHi-9g-aIh">
+                                                <rect key="frame" x="269" y="0.0" width="125" height="30"/>
+                                                <color key="backgroundColor" red="0.31626276930000002" green="0.26287967719999999" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="Pz9-BJ-q0g"/>
+                                                </constraints>
+                                                <state key="normal" title="Guardar"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93655438099999999" green="1" blue="0.24026015649999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IiJ-iX-qok">
+                                <rect key="frame" x="10" y="337" width="394" height="340"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vu1-fj-k35">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="500" constant="300" id="aMO-Xx-UdS"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1X-Fl-GOf">
+                                        <rect key="frame" x="0.0" y="310" width="100" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="pGe-H8-hez"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Vu1-fj-k35" secondAttribute="trailing" id="SQU-tX-ZHA"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PR0-9N-EAQ"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="PR0-9N-EAQ" firstAttribute="trailing" secondItem="IiJ-iX-qok" secondAttribute="trailing" constant="10" id="3K8-nI-jez"/>
+                            <constraint firstItem="IiJ-iX-qok" firstAttribute="top" relation="greaterThanOrEqual" secondItem="F6N-52-3dP" secondAttribute="bottom" constant="20" id="CIo-UT-o8x"/>
+                            <constraint firstItem="PR0-9N-EAQ" firstAttribute="bottom" secondItem="IiJ-iX-qok" secondAttribute="bottom" constant="10" id="WDe-s8-ld9"/>
+                            <constraint firstItem="IiJ-iX-qok" firstAttribute="leading" secondItem="PR0-9N-EAQ" secondAttribute="leading" constant="10" id="cw6-wy-VPh"/>
+                            <constraint firstItem="PR0-9N-EAQ" firstAttribute="trailing" secondItem="F6N-52-3dP" secondAttribute="trailing" constant="10" id="lGS-h5-FZq"/>
+                            <constraint firstItem="F6N-52-3dP" firstAttribute="top" secondItem="PR0-9N-EAQ" secondAttribute="top" constant="10" id="t17-Mf-QeC"/>
+                            <constraint firstItem="F6N-52-3dP" firstAttribute="leading" secondItem="ke6-RM-W20" secondAttribute="leading" constant="10" id="tgR-Tz-Gfh"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mail" image="mail.stack.fill" catalog="system" id="K5y-Xo-Vhc"/>
+                    <tabBarItem key="tabBarItem" title="Mail" image="mail" catalog="system" id="K5y-Xo-Vhc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwI-oz-i9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-594" y="489"/>
+            <point key="canvasLocation" x="39.375" y="488.75"/>
         </scene>
         <!--Galeria-->
         <scene sceneID="bmT-cc-8Ba">
             <objects>
                 <viewController id="crJ-rw-v0y" userLabel="Galeria" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o5g-3D-NRZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Uqh-Qd-vw6"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -70,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAd-4z-W3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="489"/>
+            <point key="canvasLocation" x="-662" y="489"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AtG-G2-Qkf">
@@ -84,8 +160,8 @@
                     <connections>
                         <segue destination="Ehz-1e-ZXf" kind="relationship" relationship="viewControllers" id="zdL-UP-zAS"/>
                         <segue destination="CMU-BB-dpW" kind="relationship" relationship="viewControllers" id="yRv-kz-Zyv"/>
-                        <segue destination="bVz-AE-ave" kind="relationship" relationship="viewControllers" id="t3P-b5-kCF"/>
                         <segue destination="crJ-rw-v0y" kind="relationship" relationship="viewControllers" id="TBp-vf-QAz"/>
+                        <segue destination="bVz-AE-ave" kind="relationship" relationship="viewControllers" id="t3P-b5-kCF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJf-0h-y9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -94,10 +170,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mail.stack.fill" catalog="system" width="128" height="122"/>
+        <image name="mail" catalog="system" width="128" height="93"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="photo.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <image name="video.fill" catalog="system" width="128" height="82"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
