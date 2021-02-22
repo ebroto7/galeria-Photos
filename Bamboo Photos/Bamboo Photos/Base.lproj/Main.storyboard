@@ -43,7 +43,7 @@
         <!--MAIL-->
         <scene sceneID="yUU-2W-U5A">
             <objects>
-                <viewController id="bVz-AE-ave" userLabel="MAIL" customClass="EmailViewController" sceneMemberID="viewController">
+                <viewController id="bVz-AE-ave" userLabel="MAIL" customClass="EmailViewController" customModule="Bamboo_Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ke6-RM-W20">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,12 +54,18 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NOM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P7h-la-uvt">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="bVz-AE-ave" id="Nvz-tX-kbm"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-MAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcO-D1-rn9">
                                         <rect key="frame" x="0.0" y="34" width="394" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="bVz-AE-ave" id="jbu-9I-EKQ"/>
+                                        </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="NQu-Sy-8ln">
                                         <rect key="frame" x="0.0" y="68" width="394" height="30"/>
@@ -127,6 +133,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mail" image="mail" catalog="system" id="K5y-Xo-Vhc"/>
+                    <connections>
+                        <outlet property="NameTextfield" destination="P7h-la-uvt" id="EXu-nP-t5g"/>
+                        <outlet property="emailTextfield" destination="xcO-D1-rn9" id="OqJ-EO-CAh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwI-oz-i9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
