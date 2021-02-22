@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		C538D1C225E3A93D00A770E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D1C125E3A93D00A770E0 /* AppDelegate.swift */; };
 		C538D1C425E3A93D00A770E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D1C325E3A93D00A770E0 /* SceneDelegate.swift */; };
-		C538D1C625E3A93D00A770E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D1C525E3A93D00A770E0 /* ViewController.swift */; };
 		C538D1C925E3A93D00A770E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C538D1C725E3A93D00A770E0 /* Main.storyboard */; };
 		C538D1CB25E3A94000A770E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C538D1CA25E3A94000A770E0 /* Assets.xcassets */; };
 		C538D1CE25E3A94000A770E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C538D1CC25E3A94000A770E0 /* LaunchScreen.storyboard */; };
+		C538D1DF25E3B06900A770E0 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D1DE25E3B06900A770E0 /* EmailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C538D1BE25E3A93D00A770E0 /* Bamboo Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bamboo Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C538D1C125E3A93D00A770E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C538D1C325E3A93D00A770E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C538D1C525E3A93D00A770E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C538D1C825E3A93D00A770E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C538D1CA25E3A94000A770E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C538D1CD25E3A94000A770E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C538D1CF25E3A94000A770E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C538D1DE25E3B06900A770E0 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,55 @@
 		C538D1C025E3A93D00A770E0 /* Bamboo Photos */ = {
 			isa = PBXGroup;
 			children = (
+				C538D1D625E3AD2000A770E0 /* Pictures */,
 				C538D1C125E3A93D00A770E0 /* AppDelegate.swift */,
 				C538D1C325E3A93D00A770E0 /* SceneDelegate.swift */,
-				C538D1C525E3A93D00A770E0 /* ViewController.swift */,
 				C538D1C725E3A93D00A770E0 /* Main.storyboard */,
 				C538D1CA25E3A94000A770E0 /* Assets.xcassets */,
 				C538D1CC25E3A94000A770E0 /* LaunchScreen.storyboard */,
 				C538D1CF25E3A94000A770E0 /* Info.plist */,
 			);
 			path = "Bamboo Photos";
+			sourceTree = "<group>";
+		};
+		C538D1D625E3AD2000A770E0 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				C538D1D725E3AD3000A770E0 /* Recursos */,
+				C538D1D925E3AD5200A770E0 /* Funcionalitats */,
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
+		C538D1D725E3AD3000A770E0 /* Recursos */ = {
+			isa = PBXGroup;
+			children = (
+				C538D1DC25E3AE3100A770E0 /* Imatges */,
+			);
+			path = Recursos;
+			sourceTree = "<group>";
+		};
+		C538D1D925E3AD5200A770E0 /* Funcionalitats */ = {
+			isa = PBXGroup;
+			children = (
+				C538D1DB25E3AE2100A770E0 /* Email */,
+			);
+			path = Funcionalitats;
+			sourceTree = "<group>";
+		};
+		C538D1DB25E3AE2100A770E0 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				C538D1DE25E3B06900A770E0 /* EmailViewController.swift */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
+		C538D1DC25E3AE3100A770E0 /* Imatges */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Imatges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C538D1C625E3A93D00A770E0 /* ViewController.swift in Sources */,
 				C538D1C225E3A93D00A770E0 /* AppDelegate.swift in Sources */,
 				C538D1C425E3A93D00A770E0 /* SceneDelegate.swift in Sources */,
+				C538D1DF25E3B06900A770E0 /* EmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

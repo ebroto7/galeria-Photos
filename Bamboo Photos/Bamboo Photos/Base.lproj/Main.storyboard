@@ -1,24 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fdO-Nm-41n">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--PHOTOS-->
+        <scene sceneID="gP9-aP-jWa">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="Ehz-1e-ZXf" userLabel="PHOTOS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I5r-H3-jbf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="z7C-wv-puV"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="PHOTOS" image="photo" catalog="system" id="alq-mK-PxH" userLabel="PHOTOS"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nke-lV-IPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-2130" y="489"/>
+        </scene>
+        <!--RandomPicture-->
+        <scene sceneID="I4E-5n-a4p">
+            <objects>
+                <viewController id="CMU-BB-dpW" userLabel="RandomPicture" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Thy-vG-1BA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qUv-oO-60K"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SafeScreen" image="video.fill" catalog="system" id="ElR-fo-HF5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mus-KT-97G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1404" y="489"/>
+        </scene>
+        <!--MAIL-->
+        <scene sceneID="yUU-2W-U5A">
+            <objects>
+                <viewController id="bVz-AE-ave" userLabel="MAIL" customClass="EmailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ke6-RM-W20">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PR0-9N-EAQ"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mail" image="mail.stack.fill" catalog="system" id="K5y-Xo-Vhc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LwI-oz-i9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-594" y="489"/>
+        </scene>
+        <!--Galeria-->
+        <scene sceneID="bmT-cc-8Ba">
+            <objects>
+                <viewController id="crJ-rw-v0y" userLabel="Galeria" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o5g-3D-NRZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Uqh-Qd-vw6"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Galeria" image="photo.on.rectangle.fill" catalog="system" id="krl-3g-FZK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rAd-4z-W3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="489"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="AtG-G2-Qkf">
+            <objects>
+                <tabBarController id="fdO-Nm-41n" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i3f-9C-fLm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ehz-1e-ZXf" kind="relationship" relationship="viewControllers" id="zdL-UP-zAS"/>
+                        <segue destination="CMU-BB-dpW" kind="relationship" relationship="viewControllers" id="yRv-kz-Zyv"/>
+                        <segue destination="bVz-AE-ave" kind="relationship" relationship="viewControllers" id="t3P-b5-kCF"/>
+                        <segue destination="crJ-rw-v0y" kind="relationship" relationship="viewControllers" id="TBp-vf-QAz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJf-0h-y9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1009" y="-288"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mail.stack.fill" catalog="system" width="128" height="122"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="photo.on.rectangle.fill" catalog="system" width="128" height="96"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
