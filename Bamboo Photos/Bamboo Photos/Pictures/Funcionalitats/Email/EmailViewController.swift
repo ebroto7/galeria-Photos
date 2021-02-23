@@ -100,7 +100,7 @@ class EmailViewController: UIViewController {
         UserDefaults.standard.setValue(listOfnames, forKey: nameEmailKey)
         UserDefaults.standard.synchronize()
         
-        textView.text += "\n\(fullString)"       // ho afegim al textview de la app
+        previsualitzacioDades(name, andEmail: email) // ho afegim al textview de la app
         print("saving \(fullString)")            //comprovem a consola que funciona
         
     }
@@ -115,7 +115,11 @@ class EmailViewController: UIViewController {
 ////        return "\(userName); \(userEmail)"
         if let storedNameAndEmails = UserDefaults.standard.stringArray(forKey: nameEmailKey) {
             for value in storedNameAndEmails {
-                textView.text.append("\n" + value)
+                
+                let nameAndEmail = value.split(separator: ";") //split converteix el que teniem a tipus "String.subsequence"
+                let name: String = String(nameAndEmail[0])  //hem despecificar que volem un "String"
+                let email: String = String(nameAndEmail[1]) //hem despecificar que volem un "String"
+                previsualitzacioDades(name, andEmail: email)
                 print("Stored Value: \(value)")
             }
         }
@@ -123,10 +127,20 @@ class EmailViewController: UIViewController {
         
     }
     
+    // generem la funcio que construeix el format per a presentar-ho maco en el textView
+    private func previsualitzacioDades(_ name: String, andEmail email: String) {
+        let userDescripion: String = """
+        \nName: \(name)
+        Email: \(email)
+        ----------------------------
+        """
+        textView.text += userDescripion
+    }
+    
 // per eliminar les dades del disc dur
     func resetData() {
-        UserDefaults.standard.removeObject(forKey: "name")
-        UserDefaults.standard.removeObject(forKey: "email")
+        UserDefaults.standard.removeObject(forKey: self.nameEmailKey)
+        UserDefaults.standard.removeObject(forKey: self.nameEmailKey)
         UserDefaults.standard.synchronize()
         textView.text = ""
     }
