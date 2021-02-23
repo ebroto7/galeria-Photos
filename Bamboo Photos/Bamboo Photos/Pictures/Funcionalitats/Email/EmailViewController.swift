@@ -19,6 +19,9 @@ class EmailViewController: UIViewController {
     let messageTextview = ""
     
     
+    private let nameEmailKey: String = "MyNameAndEmailKey"
+    private var listOfEmails: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateTextview()
@@ -75,11 +78,32 @@ class EmailViewController: UIViewController {
     
 // guardem la info al disc dur
     func saveToUserDefaults() {
-        let userName: String = nameTextfield.text!
-        let userEmail = emailTextfield.text!
-        UserDefaults.standard.setValue(userName, forKey: "name")
-        UserDefaults.standard.setValue(userEmail, forKey: "email")
+//        let userName: String = nameTextfield.text!
+//        let userEmail = emailTextfield.text!
+//        UserDefaults.standard.setValue(userName, forKey: "name")
+//        UserDefaults.standard.setValue(userEmail, forKey: "email")
+//        UserDefaults.standard.synchronize()
+        
+
+// abans guardavem al disc un nom i un correu, ara ho modifiquem per guardar
+       // trenquem l'opcional i generem la dada a guardar
+        guard let name = nameTextfield.text,
+              let email = emailTextfield.text else { return }
+        
+        let fullString: String = "\(name); \(email)"
+    
+        //llegeixo el que hi ha a la llista, podria ser que no hi ha dades, per tant em de trencar l'opcional
+        var listOfnames: [String] = UserDefaults.standard.stringArray(forKey: nameEmailKey) ?? [String]()
+        //afegeixo les noves dades
+        listOfnames.append(fullString)
+        
+        //guardo y sincronitzp dades
+        UserDefaults.standard.setValue(listOfnames, forKey: nameEmailKey)
         UserDefaults.standard.synchronize()
+        
+        textView.text += "\n\(fullString)"       // ho afegim al textview de la app
+        print("saving \(fullString)")            //comprovem a consola que funciona
+        
     }
   
     
