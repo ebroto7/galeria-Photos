@@ -21,6 +21,7 @@ class EmailViewController: UIViewController {
     
     private let nameEmailKey: String = "MyNameAndEmailKey"
     private var listOfEmails: [String] = []
+    private let separadorNameEmail: Character = ";"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +90,7 @@ class EmailViewController: UIViewController {
         guard let name = nameTextfield.text,
               let email = emailTextfield.text else { return }
         
-        let fullString: String = "\(name); \(email)"
+        let fullString: String = "\(name) \(separadorNameEmail) \(email)"
     
         //llegeixo el que hi ha a la llista, podria ser que no hi ha dades, per tant em de trencar l'opcional
         var listOfnames: [String] = UserDefaults.standard.stringArray(forKey: nameEmailKey) ?? [String]()
@@ -116,7 +117,7 @@ class EmailViewController: UIViewController {
         if let storedNameAndEmails = UserDefaults.standard.stringArray(forKey: nameEmailKey) {
             for value in storedNameAndEmails {
                 
-                let nameAndEmail = value.split(separator: ";") //split converteix el que teniem a tipus "String.subsequence"
+                let nameAndEmail = value.split(separator: separadorNameEmail) //split converteix el que teniem a tipus "String.subsequence"
                 let name: String = String(nameAndEmail[0])  //hem despecificar que volem un "String"
                 let email: String = String(nameAndEmail[1]) //hem despecificar que volem un "String"
                 previsualitzacioDades(name, andEmail: email)
