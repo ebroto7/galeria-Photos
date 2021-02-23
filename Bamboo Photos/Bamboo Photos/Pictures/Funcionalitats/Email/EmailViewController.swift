@@ -46,7 +46,6 @@ class EmailViewController: UIViewController {
         } else {
         
         saveToUserDefaults()
-        updateTextview()
         }
     }
     
@@ -109,12 +108,19 @@ class EmailViewController: UIViewController {
     
 // recuperem la info del disc dur
     func updateTextview() {
-        let userName = UserDefaults.standard.string(forKey: "name") ?? "Sense nom"
-        let userEmail = UserDefaults.standard.string(forKey: "email") ?? "Sense email"
-        print("\(userName); \(userEmail)")
-        textView.text  += "\n \(userName): \(userEmail)"
-//        return "\(userName); \(userEmail)"
-     
+//        let userName = UserDefaults.standard.string(forKey: "name") ?? "Sense nom"
+//        let userEmail = UserDefaults.standard.string(forKey: "email") ?? "Sense email"
+//        print("\(userName); \(userEmail)")
+//        textView.text  += "\n \(userName): \(userEmail)"
+////        return "\(userName); \(userEmail)"
+        if let storedNameAndEmails = UserDefaults.standard.stringArray(forKey: nameEmailKey) {
+            for value in storedNameAndEmails {
+                textView.text.append("\n" + value)
+                print("Stored Value: \(value)")
+            }
+        }
+    
+        
     }
     
 // per eliminar les dades del disc dur
