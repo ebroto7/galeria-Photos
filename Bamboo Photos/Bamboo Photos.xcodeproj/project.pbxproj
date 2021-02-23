@@ -13,6 +13,9 @@
 		C538D1CB25E3A94000A770E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C538D1CA25E3A94000A770E0 /* Assets.xcassets */; };
 		C538D1CE25E3A94000A770E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C538D1CC25E3A94000A770E0 /* LaunchScreen.storyboard */; };
 		C538D1E525E3D21300A770E0 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D1E425E3D21300A770E0 /* EmailViewController.swift */; };
+		C538D1EB25E525D300A770E0 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D1EA25E525D300A770E0 /* PicturesViewController.swift */; };
+		C538D1EF25E531D400A770E0 /* PicturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D1EE25E531D400A770E0 /* PicturesCell.swift */; };
+		C538D1F225E5323C00A770E0 /* PicturesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C538D1F125E5323C00A770E0 /* PicturesCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C538D1CD25E3A94000A770E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C538D1CF25E3A94000A770E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C538D1E425E3D21300A770E0 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		C538D1EA25E525D300A770E0 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
+		C538D1EE25E531D400A770E0 /* PicturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCell.swift; sourceTree = "<group>"; };
+		C538D1F125E5323C00A770E0 /* PicturesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		C538D1D925E3AD5200A770E0 /* Funcionalitats */ = {
 			isa = PBXGroup;
 			children = (
+				C538D1E925E525A100A770E0 /* picturesCollection */,
 				C538D1DB25E3AE2100A770E0 /* Email */,
 			);
 			path = Funcionalitats;
@@ -105,6 +112,16 @@
 			children = (
 			);
 			path = Imatges;
+			sourceTree = "<group>";
+		};
+		C538D1E925E525A100A770E0 /* picturesCollection */ = {
+			isa = PBXGroup;
+			children = (
+				C538D1EA25E525D300A770E0 /* PicturesViewController.swift */,
+				C538D1EE25E531D400A770E0 /* PicturesCell.swift */,
+				C538D1F125E5323C00A770E0 /* PicturesCell.xib */,
+			);
+			path = picturesCollection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C538D1F225E5323C00A770E0 /* PicturesCell.xib in Resources */,
 				C538D1CE25E3A94000A770E0 /* LaunchScreen.storyboard in Resources */,
 				C538D1CB25E3A94000A770E0 /* Assets.xcassets in Resources */,
 				C538D1C925E3A93D00A770E0 /* Main.storyboard in Resources */,
@@ -178,7 +196,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C538D1C225E3A93D00A770E0 /* AppDelegate.swift in Sources */,
+				C538D1EB25E525D300A770E0 /* PicturesViewController.swift in Sources */,
 				C538D1E525E3D21300A770E0 /* EmailViewController.swift in Sources */,
+				C538D1EF25E531D400A770E0 /* PicturesCell.swift in Sources */,
 				C538D1C425E3A93D00A770E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

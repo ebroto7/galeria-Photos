@@ -40,10 +40,10 @@ class EmailViewController: UIViewController {
         if popUpuserName.isEmpty || popUpuserEmail.isEmpty {
             let alert = UIAlertController(title: "Ja has escrit el teu nom i e-mail?", message: "Falten dades", preferredStyle: .actionSheet)
 
-                        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "No", style: .cancel , handler: nil))
             
-                        self.present(alert, animated: true)
+            self.present(alert, animated: true)
         } else {
         
         saveToUserDefaults()

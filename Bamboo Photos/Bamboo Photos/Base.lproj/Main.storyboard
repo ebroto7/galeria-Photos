@@ -11,14 +11,52 @@
         <!--PHOTOS-->
         <scene sceneID="gP9-aP-jWa">
             <objects>
-                <viewController id="Ehz-1e-ZXf" userLabel="PHOTOS" sceneMemberID="viewController">
+                <viewController id="Ehz-1e-ZXf" userLabel="PHOTOS" customClass="PicturesViewController" customModule="Bamboo_Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I5r-H3-jbf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-jH-p5n">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yb3-4y-Z5K">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tyQ-sG-cfw">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Ehz-1e-ZXf" id="UrI-Mt-j7y"/>
+                                            <outlet property="delegate" destination="Ehz-1e-ZXf" id="76a-fQ-EdT"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Yb3-4y-Z5K" firstAttribute="top" secondItem="aFj-jH-p5n" secondAttribute="top" id="3Yz-fH-67t"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yb3-4y-Z5K" secondAttribute="bottom" id="9rx-4g-lGt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yb3-4y-Z5K" secondAttribute="trailing" id="Qaa-gI-y5n"/>
+                                    <constraint firstItem="Yb3-4y-Z5K" firstAttribute="leading" secondItem="aFj-jH-p5n" secondAttribute="leading" id="V3N-Qx-f0D"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="z7C-wv-puV"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="aFj-jH-p5n" firstAttribute="top" secondItem="z7C-wv-puV" secondAttribute="top" id="7DI-U1-zix"/>
+                            <constraint firstItem="aFj-jH-p5n" firstAttribute="leading" secondItem="z7C-wv-puV" secondAttribute="leading" id="dtq-93-otZ"/>
+                            <constraint firstItem="z7C-wv-puV" firstAttribute="trailing" secondItem="aFj-jH-p5n" secondAttribute="trailing" id="oxb-NK-a7J"/>
+                            <constraint firstItem="z7C-wv-puV" firstAttribute="bottom" secondItem="aFj-jH-p5n" secondAttribute="bottom" id="ywm-W2-vIu"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="PHOTOS" image="photo" catalog="system" id="alq-mK-PxH" userLabel="PHOTOS"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Yb3-4y-Z5K" id="67K-3w-IjG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nke-lV-IPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +143,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IiJ-iX-qok">
                                 <rect key="frame" x="10" y="337" width="394" height="340"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vu1-fj-k35">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text=" " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vu1-fj-k35">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
