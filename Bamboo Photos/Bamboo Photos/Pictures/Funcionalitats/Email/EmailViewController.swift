@@ -47,6 +47,7 @@ class EmailViewController: UIViewController {
         } else {
         
         saveToUserDefaults()
+        emailTextfield.resignFirstResponder()
         }
     }
     
