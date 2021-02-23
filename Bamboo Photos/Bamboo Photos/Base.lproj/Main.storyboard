@@ -121,9 +121,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="pGe-H8-hez"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Reset">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetButton:" destination="bVz-AE-ave" eventType="touchUpInside" id="0Rf-Gc-xCN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

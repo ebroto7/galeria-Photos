@@ -37,7 +37,7 @@ class EmailViewController: UIViewController {
             let alert = UIAlertController(title: "Ja has escrit el teu nom i e-mail?", message: "Falten dades", preferredStyle: .actionSheet)
 
                         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-                        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel , handler: nil))
             
                         self.present(alert, animated: true)
         } else {
@@ -48,7 +48,31 @@ class EmailViewController: UIViewController {
     }
     
 
+    @IBAction func resetButton(_ sender: Any) {
+        
+           
+     // creem el popUp
+        let alert = UIAlertController(title: "Compte!", message: "Segur que vols esborrar les dades?", preferredStyle: .alert)
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: { action in print("has cancelat l'esborrat de dades")  //queda en negreta
+            
+        })
+        alert.addAction(cancelAction)
+        
+//        alert.addAction(UIAlertAction(title: "default", style: .default, handler: nil))         //queda normal
+        
+        let removeAction = (UIAlertAction(title: "Eliminar", style: .destructive, handler: { action in print("Has esborrat les dades")
+            
+            self.resetData()
+//            self.updateTextview()
+            
+        })) //queda en vermell
+        alert.addAction(removeAction)
 
+        // cridem el popUp
+        self.present(alert, animated: true)
+    }
+    
 // guardem la info al disc dur
     func saveToUserDefaults() {
         let userName: String = nameTextfield.text!
@@ -67,6 +91,14 @@ class EmailViewController: UIViewController {
         textView.text  += "\n \(userName): \(userEmail)"
 //        return "\(userName); \(userEmail)"
      
+    }
+    
+// per eliminar les dades del disc dur
+    func resetData() {
+        UserDefaults.standard.removeObject(forKey: "name")
+        UserDefaults.standard.removeObject(forKey: "email")
+        UserDefaults.standard.synchronize()
+        textView.text = ""
     }
     
 // per enviar un mail al correu que introduim als textfiels
