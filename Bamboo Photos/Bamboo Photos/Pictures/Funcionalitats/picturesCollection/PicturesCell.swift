@@ -11,6 +11,7 @@ class PicturesCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var numberView: UIButton!
+    @IBOutlet weak var numberView: UILabel!
+    
     
 }
