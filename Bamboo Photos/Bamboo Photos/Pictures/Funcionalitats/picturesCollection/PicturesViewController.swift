@@ -66,7 +66,7 @@ extension PicturesViewController: UICollectionViewDataSource {      //per defect
     // com que a tot l'anterior encara tenia opcional, l'haig de trencar
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifire, for: indexPath)
         if let picturesCell = cell as? PicturesCell {
-            picturesCell.numberView.text = String(indexPath.row)        //mostra la el número de la imatge segons indexpath.row
+            picturesCell.numberView.text = String(indexPath.row)        //mostra el número de la imatge segons indexpath.row
             picturesCell.imageView.image = imageData.imageForPosition(indexPath.row)    //mostra la imatge segons indexpath.row
  
             return picturesCell
