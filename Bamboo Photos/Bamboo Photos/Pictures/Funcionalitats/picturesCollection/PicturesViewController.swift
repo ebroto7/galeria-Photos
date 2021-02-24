@@ -88,6 +88,9 @@ extension PicturesViewController: UICollectionViewDelegate {        // d'entrada
         let imageName: String = imageData.imagesUrl?[selectedPosition].lastPathComponent ?? "imatge sensen nom"
         print("\(selectedPosition): \(imageName)")
         
+        //per traspasar la informació  //en aquest cas guardem el numero de la imatge que selecciona l'usuari
+        PicturesViewModel.selectedIndex = selectedPosition
+        
     }
         
 }
