@@ -38,6 +38,9 @@ class PicturesViewController: UIViewController {
         // amb el .xib puc generar un component que despres reutilitzo a la meva app
             // igual que una funció em serveix per reutilitzar codi, el .xib em serveix per reutilitzar un component visual
         collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifire)  // li diem a la collectionView que carregui a partir de l'arxiu .xib
+        
+       
+        
     }
     
 }
@@ -63,7 +66,9 @@ extension PicturesViewController: UICollectionViewDataSource {      //per defect
     // com que a tot l'anterior encara tenia opcional, l'haig de trencar
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifire, for: indexPath)
         if let picturesCell = cell as? PicturesCell {
-            picturesCell.numberView.text = String(indexPath.row)
+            picturesCell.numberView.text = String(indexPath.row)        //mostra la el número de la imatge segons indexpath.row
+            picturesCell.imageView.image = imageData.imageForPosition(indexPath.row)    //mostra la imatge segons indexpath.row
+ 
             return picturesCell
         } else {
             return cell
@@ -75,8 +80,14 @@ extension PicturesViewController: UICollectionViewDataSource {      //per defect
 
 extension PicturesViewController: UICollectionViewDelegate {        // d'entrada no te preestablerts necessàris com passa amb la extensió dataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let indexPath = indexPath
-        print(indexPath)
+//       per veure el numero de indexPath
+//        let indexPath = indexPath
+//        print(indexPath)
+        
+        let selectedPosition: Int = indexPath.row
+        let imageName: String = imageData.imagesUrl?[selectedPosition].lastPathComponent ?? "imatge sensen nom"
+        print("\(selectedPosition): \(imageName)")
+        
     }
         
 }
