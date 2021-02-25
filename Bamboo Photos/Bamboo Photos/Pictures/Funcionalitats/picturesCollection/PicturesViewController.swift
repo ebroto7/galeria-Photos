@@ -84,12 +84,16 @@ extension PicturesViewController: UICollectionViewDelegate {        // d'entrada
 //        let indexPath = indexPath
 //        print(indexPath)
         
+        //guardem la casella seleccionada en un constant
         let selectedPosition: Int = indexPath.row
-        let imageName: String = imageData.imagesUrl?[selectedPosition].lastPathComponent ?? "imatge sensen nom"
-        print("\(selectedPosition): \(imageName)")
-        
         //per traspasar la informació  //en aquest cas guardem el numero de la imatge que selecciona l'usuari
         PicturesViewModel.selectedIndex = selectedPosition
+        // per enllaçar la imatge amb la pantalla de detall
+        performSegue(withIdentifier: "segueToDetail", sender: nil)
+        
+        
+        let imageName: String = imageData.imagesUrl?[selectedPosition].lastPathComponent ?? "imatge sensen nom"
+        print("\(selectedPosition) : \(imageName)")
         
     }
         

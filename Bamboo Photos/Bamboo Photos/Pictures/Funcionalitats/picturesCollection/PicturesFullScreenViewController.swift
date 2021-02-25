@@ -17,7 +17,7 @@ class PicturesFullScreenViewController: UIViewController {
     
     
     @IBAction func closeButton(_ sender: Any) {
-    print("sortim de la pantalla")
+        dismiss(animated: true, completion: nil)        //per amagar la pantalla quan cliquem el botó
     }
     
     
@@ -33,10 +33,27 @@ class PicturesFullScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        likeSwitch.isOn = false
+        likeSwitch.isOn = false     // per començar amb el switch apagat/tancat/dislike
+        
+        print("Has tocat la casella: \(PicturesViewModel.selectedIndex)")
+        
+//        //generem constant on guardar la imatge que importem
+//        let image: UIImage? = imageData.imageForPosition(PicturesViewModel.selectedIndex)
+        
+        // com que l'anterior "image" es opcional, el trenquem
+        if let imageIndex: Int = PicturesViewModel.selectedIndex {      
+            let image: UIImage? = imageData.imageForPosition(imageIndex)
+            fullImageView.image = image
+        }
+        
+        
+        
         
     }
     
-
-
+    
+    
+    
+  
 }
+
