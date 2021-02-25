@@ -156,7 +156,7 @@ class EmailViewController: UIViewController {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients([userEmail])
-            mail.setMessageBody("Hola \(userName), \n lwugfuwhfiwenhcbfqwueh", isHTML: false)
+            mail.setMessageBody("Hola \(userName), \n ", isHTML: false)
             
             present(mail, animated: true)
         }
