@@ -22,9 +22,12 @@ class PicturesFullScreenViewController: UIViewController {
     
     
     @IBAction func switchAction(_ sender: Any) {
+        guard let imageIndex: Int = PicturesViewModel.selectedIndex else { return }
         if likeSwitch.isOn {
+            imageData.likeImagePosition(imageIndex)
             print("t'ha agradat la imatge")
         } else {
+            imageData.dislikeImageAtPosition(imageIndex)
             print("ja no t'agrada")
         }
     }
@@ -47,6 +50,9 @@ class PicturesFullScreenViewController: UIViewController {
             
             let title: String = imageData.getTitle(imageIndex)
             nameTextField.text = title
+            
+            let islike: Bool = imageData.getLikeForPosition(imageIndex)
+            likeSwitch.isOn = islike
         }
         
         

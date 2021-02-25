@@ -37,7 +37,7 @@ class imageData {
         }
     }
     
-    
+// FUNCIONS PEL TITOL DE LA IMATGE
     //guardarà el titol que rebo per parametre a la posició que em diuen
     static func setTitle(_ title: String, position: Int)  {
         imagesTitle[position] = title
@@ -48,6 +48,22 @@ class imageData {
         return title
     }
     
+// FUNCIONS PEL LIKE SWITCH
+    
+    //guarda true a la llista de likes "likedImages" si switch es like
+    static func likeImagePosition(_ position: Int) {
+        likedImages[position] = true
+    }
+    //guarda false a la llista de likes "likedImages" si switch es dislike
+    static func dislikeImageAtPosition(_ position: Int) {
+        likedImages[position] = false
+    }
+    
+    //detecta si està like o dislike
+    static func getLikeForPosition(_ position: Int) -> Bool {
+        let isLike: Bool = likedImages[position]
+        return isLike
+    }
     
 }
 
