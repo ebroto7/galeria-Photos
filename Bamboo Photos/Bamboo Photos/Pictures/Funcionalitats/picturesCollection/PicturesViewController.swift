@@ -28,9 +28,122 @@ import UIKit
 
 class PicturesViewController: UIViewController {
     
+    private var cellHeight: CGFloat = 90    //variable que dona valor a la mida de la cel.la
+    
     private let reuseIdentifire = String(describing: PicturesCell.self) //cada reuseIdentifier es dirà com el seva Class, així evites problemes (en el nostre cas no ho necesitem), podriem tenir diferents tipus de cel.les (per exeple cel.la de de foto i cel.la de text)
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    @IBOutlet weak var butonsStackView: UIStackView!
+    @IBOutlet weak var listButton: UIButton!
+    @IBOutlet weak var columnButton: UIButton!
+    @IBOutlet weak var smallColumnButton: UIButton!
+    @IBOutlet weak var verySmallColumnButton: UIButton!
+    
+    @IBOutlet var llistaBotons: [UIButton]!
+    
+    
+    @IBAction func buttonGridOptions(_ sender: UIButton) {      //sender es el botò clicat
+//        print(sender.titleLabel?.text)
+//        print(sender.tag)
+      //opció 1
+//        if  sender.tag == 0 {
+//            print("1r botó")
+//
+//        } else  if  sender.tag == 1 {
+//            print("2n botó")
+//
+//        } else  if  sender.tag == 2 {
+//            print("3r botó")
+//
+//        } else  if  sender.tag == 3 {
+//            print("4t botó")
+//
+//        } else {
+//            print("")
+//        }
+        
+    //opció 2
+//        switch sender.tag {
+//        case 0 :
+//            print("1r - botó")
+//            cellHeight = 320
+//
+//        case 1:
+//            print("2n - botó")
+//            cellHeight = 155
+//
+//        case 2:
+//            print("3r - botó")
+//            cellHeight = 75
+//
+//        case 3:
+//            print("4t - botó")
+//            cellHeight = 35
+//
+//        default:
+//            print("hola")
+//    }
+        changeViewByButton(tag: sender.tag)
+        
+        //desseleccionem els botons
+//        // si ho fem individualment per botons cadascun amb el seu outlet
+//        listButton.isSelected = false
+//        columnButton.isSelected = false
+//        smallColumnButton.isSelected = false
+//        verySmallColumnButton.isSelected = false
+//        
+        //havent generat un llista de butons
+//
+//        for button in llistaBotons {
+//            button.isSelected = false
+//        }
+//
+//        sender.isSelected = true        //el boto selecionat està marcat
+        
+        selectedButton(sender: sender)
+        
+        collectionView.reloadData() //torna a carregar la coleccition view
+    }
+    
+    func selectedButton(sender: UIButton) {
+        for button in llistaBotons {
+            button.isSelected = false
+        }
+        sender.isSelected = true
+        
+        
+    }
+    
+    func changeViewByButton(tag: Int)  {
+        switch tag {
+        case 0 :
+            print("1r - botó")
+            cellHeight = 320
+   
+        case 1:
+            print("2n - botó")
+            cellHeight = 155
+   
+        case 2:
+            print("3r - botó")
+            cellHeight = 75
+       
+        case 3:
+            print("4t - botó")
+            cellHeight = 35
+          
+        default:
+            print("hola")
+        }
+        collectionView.reloadData()
+    }
+    
+//    enum GridOptions: int {
+//        case list = 0, columns, grid, xsgrid
+//    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +152,76 @@ class PicturesViewController: UIViewController {
             // igual que una funció em serveix per reutilitzar codi, el .xib em serveix per reutilitzar un component visual
         collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifire)  // li diem a la collectionView que carregui a partir de l'arxiu .xib
         
+        butonsStackView.layer.cornerRadius = 20     //arodonim les cantonades de l'stackview dels botons
+        
        
+        PicturesViewModel.textProbes = "Hola"     //probando cosas
+    }
+    
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super .viewWillTransition(to: size, with: coordinator)
+        
+        let orientacion = UIDevice.current.orientation
+        // amb el switch podem descubrir les opcions que tenim, pero no ens interesa perque nomes volem comprobar les posicions horitzontal i vertical (portrait - landscape)
+        //        switch orientacion {
+        //
+        //        case .unknown:
+        //            print("orientació: unknown")
+        //        case .portrait:
+        //            print("orientació: portrait")
+        //        case .portraitUpsideDown:
+        //            print("orientació: upsidedown")
+        //        case .landscapeLeft:
+        //            print("orientació: landscape")
+        //        case .landscapeRight:
+        //            print("orientació: landscapeRigth")
+        //        case .faceUp:
+        //            print("orientació: faceUp")
+        //        case .faceDown:
+        //            print("orientació: faceDown")
+        //        @unknown default:
+        //            print("orientació: desconeguda")
+        
+        //comprobem les orientacions que ens interesen
+//        if orientacion.isPortrait == true {
+//            print("la orientació es vertical")
+//        } else if orientacion.isLandscape == true {
+//            print("la orientació es horitzontal")
+//        }
+       
+        //simplificat, d'aquesta manera només controlo que quan la pantalla és horitzontal modifiqui el que necesiti
+       // printem per comprobar que funciona
+//        if orientacion.isLandscape  {
+//            print("la orientació es horitzontal")
+//        } else {
+//            print("la orientació es vertical")
+//        }
+        
+       
+        //solució "guard let"
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        
+        if UIDevice.current.orientation.isLandscape {
+            layout.scrollDirection = .horizontal
+        } else if UIDevice.current.orientation.isPortrait {
+            layout.scrollDirection = .vertical
+        }
+        
+       // solució "if let"
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+        if orientacion.isLandscape  {
+            layout.scrollDirection = .horizontal
+            print("la orientació es horitzontal")
+        } else {
+            layout.scrollDirection = .vertical
+            print("la orientació es vertical")
+        }
+        }
+
         
     }
+    
     
 }
 
@@ -104,7 +284,7 @@ extension PicturesViewController: UICollectionViewDelegateFlowLayout {  // dona 
     
     //1. tamany de la cel.la
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: 90, height: 90)
+        let size = CGSize(width: cellHeight, height: cellHeight)
         return size
     }
     
@@ -119,5 +299,13 @@ extension PicturesViewController: UICollectionViewDelegateFlowLayout {  // dona 
         let spaceInteritem = CGFloat(5)
         return spaceInteritem
     }
+    
+    
+    
+    
+//--------------------- PROBES ---------------------
+    
+    
+    
     
 }

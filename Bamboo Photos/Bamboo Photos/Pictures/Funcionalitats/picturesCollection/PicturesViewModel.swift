@@ -13,4 +13,5 @@ import UIKit
 
 class PicturesViewModel  {
     static var selectedIndex: Int?
+    static var textProbes: String?
 }

@@ -16,6 +16,8 @@ class PicturesFullScreenViewController: UIViewController {
     @IBOutlet weak var likeSwitch: UISwitch!
     
     
+    
+    
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)        //per amagar la pantalla quan cliquem el botó
     }
@@ -55,8 +57,18 @@ class PicturesFullScreenViewController: UIViewController {
             likeSwitch.isOn = islike
         }
         
+
         
+        //opció 1 per trencar l'opcional
+        print(PicturesViewModel.textProbes!)
         
+        //opciò 2
+        print(PicturesViewModel.textProbes ?? "no hi ha resultat")
+        
+        //opció 3
+        if let text: String = PicturesViewModel.textProbes {
+        print(text)
+        }
         
     }
     
