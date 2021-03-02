@@ -23,7 +23,7 @@ class imageData {
     
     // quan introdueixo la url, em retorna la imatge (donam la imatge de la url x)
     static func imageForUrl(_ url: URL) -> UIImage? {
-        let imageUrlName: String = url.lastPathComponent //demanem que de la url només volem el  nom
+        let imageUrlName: String = url.lastPathComponent //demanem que de la url només volem el nom
         let image: UIImage? = UIImage(named: imageUrlName) //
         return image
     }

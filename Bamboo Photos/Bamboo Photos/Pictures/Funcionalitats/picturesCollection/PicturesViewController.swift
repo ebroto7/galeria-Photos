@@ -28,10 +28,14 @@ import UIKit
 
 class PicturesViewController: UIViewController {
     
-    private var cellHeight: CGFloat = 90    //variable que dona valor a la mida de la cel.la
+  //  private var cellHeight: CGFloat = 90    //variable que dona valor a la mida de la cel.la
+    //com que ara modifiquem l'ample de les cel.les en funció de les imatges que volem en cada vista, ja no utilitzem la variable
     
     private let reuseIdentifire = String(describing: PicturesCell.self) //cada reuseIdentifier es dirà com el seva Class, així evites problemes (en el nostre cas no ho necesitem), podriem tenir diferents tipus de cel.les (per exeple cel.la de de foto i cel.la de text)
-
+    private var numOfHorzontalCells: CGFloat = 5.0
+    private var marginBetweenCells: CGFloat = 5.0
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -40,11 +44,12 @@ class PicturesViewController: UIViewController {
     @IBOutlet weak var columnButton: UIButton!
     @IBOutlet weak var smallColumnButton: UIButton!
     @IBOutlet weak var verySmallColumnButton: UIButton!
+    @IBOutlet weak var ContainerVisualEfectButonsView: UIView!
     
     @IBOutlet var llistaBotons: [UIButton]!
     
     
-    @IBAction func buttonGridOptions(_ sender: UIButton) {      //sender es el botò clicat
+    @IBAction func buttonGridOptions(_ sender: UIButton) {      //sender és el botò clicat
 //        print(sender.titleLabel?.text)
 //        print(sender.tag)
       //opció 1
@@ -120,19 +125,19 @@ class PicturesViewController: UIViewController {
         switch tag {
         case 0 :
             print("1r - botó")
-            cellHeight = 320
+            numOfHorzontalCells = 1
    
         case 1:
             print("2n - botó")
-            cellHeight = 155
+            numOfHorzontalCells = 2
    
         case 2:
             print("3r - botó")
-            cellHeight = 75
+            numOfHorzontalCells = 4
        
         case 3:
             print("4t - botó")
-            cellHeight = 35
+            numOfHorzontalCells = 8
           
         default:
             print("hola")
@@ -152,7 +157,11 @@ class PicturesViewController: UIViewController {
             // igual que una funció em serveix per reutilitzar codi, el .xib em serveix per reutilitzar un component visual
         collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifire)  // li diem a la collectionView que carregui a partir de l'arxiu .xib
         
-        butonsStackView.layer.cornerRadius = 20     //arodonim les cantonades de l'stackview dels botons
+        ContainerVisualEfectButonsView.layer.cornerRadius = 20
+    //    butonsStackView.layer.cornerRadius = 20     //arodonim les cantonades de l'stackview dels botons
+       
+        selectedButton(sender: listButton)
+        changeViewByButton(tag: 0)
         
        
         PicturesViewModel.textProbes = "Hola"     //probando cosas
@@ -284,19 +293,31 @@ extension PicturesViewController: UICollectionViewDelegateFlowLayout {  // dona 
     
     //1. tamany de la cel.la
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: cellHeight, height: cellHeight)
-        return size
+//        let size = CGSize(width: cellHeight, height: cellHeight)
+//        return size
+        
+//        //sense tenir en compte marges
+//        let collectionWidth: CGFloat = collectionView.frame.size.width // et diu l'ample de la pantalla
+//        let cellWidth: CGFloat = collectionWidth / numOfHorzontalCells
+//        return CGSize(width: cellWidth, height: cellWidth)
+        
+        //tenint en compte els marges
+        let collectionWidth: CGFloat = collectionView.frame.size.width
+        let cellWidth: CGFloat = (collectionWidth - (numOfHorzontalCells-1)*marginBetweenCells) / numOfHorzontalCells
+        return CGSize(width: cellWidth, height: cellWidth)
+        
+        
     }
     
     //2. mida separador entreSeccions (entre files)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        let spaceForSection = CGFloat(5)
+        let spaceForSection = marginBetweenCells
         return spaceForSection
     }
     
     //3. mida separador entre items de la manteixa fila
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        let spaceInteritem = CGFloat(5)
+        let spaceInteritem = marginBetweenCells
         return spaceInteritem
     }
     

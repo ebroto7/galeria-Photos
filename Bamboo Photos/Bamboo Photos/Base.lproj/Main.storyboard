@@ -43,75 +43,116 @@
                                     <constraint firstItem="Yb3-4y-Z5K" firstAttribute="leading" secondItem="aFj-jH-p5n" secondAttribute="leading" id="V3N-Qx-f0D"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-J6-sOV">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydQ-Kq-nRR">
                                 <rect key="frame" x="87" y="763" width="240" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pt2-Te-7Nn">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUv-ci-C3h">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EGQ-C3-9kM">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                        <state key="normal" title="list!">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonGridOptions:" destination="Ehz-1e-ZXf" eventType="touchUpInside" id="Ldw-mu-wB7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESL-38-WHd">
-                                        <rect key="frame" x="60" y="0.0" width="60" height="50"/>
+                                        <blurEffect style="systemMaterial"/>
+                                    </visualEffectView>
+                                    <stackView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-J6-sOV">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pt2-Te-7Nn">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="list!">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonGridOptions:" destination="Ehz-1e-ZXf" eventType="touchUpInside" id="Ldw-mu-wB7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESL-38-WHd">
+                                                <rect key="frame" x="60" y="0.0" width="60" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cols">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonGridOptions:" destination="Ehz-1e-ZXf" eventType="touchUpInside" id="Fy5-Hq-Tft"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7u-nE-24M">
+                                                <rect key="frame" x="120" y="0.0" width="60" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="[][]">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonGridOptions:" destination="Ehz-1e-ZXf" eventType="touchUpInside" id="6hn-HU-tp7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xra-JR-Qcb">
+                                                <rect key="frame" x="180" y="0.0" width="60" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Mini">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonGridOptions:" destination="Ehz-1e-ZXf" eventType="touchUpInside" id="ubQ-N6-7IY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                        <state key="normal" title="Cols">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonGridOptions:" destination="Ehz-1e-ZXf" eventType="touchUpInside" id="Fy5-Hq-Tft"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7u-nE-24M">
-                                        <rect key="frame" x="120" y="0.0" width="60" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                        <state key="normal" title="[][]">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonGridOptions:" destination="Ehz-1e-ZXf" eventType="touchUpInside" id="6hn-HU-tp7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xra-JR-Qcb">
-                                        <rect key="frame" x="180" y="0.0" width="60" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                        <state key="normal" title="Mini grid">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonGridOptions:" destination="Ehz-1e-ZXf" eventType="touchUpInside" id="ubQ-N6-7IY"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="Ofp-N9-lhv"/>
-                                    <constraint firstAttribute="height" constant="50" id="QiV-gI-L0b"/>
+                                    <constraint firstItem="cUv-ci-C3h" firstAttribute="top" secondItem="ydQ-Kq-nRR" secondAttribute="top" id="2cb-Ea-gTu"/>
+                                    <constraint firstAttribute="trailing" secondItem="cUv-ci-C3h" secondAttribute="trailing" id="825-ae-cON"/>
+                                    <constraint firstAttribute="bottom" secondItem="cUv-ci-C3h" secondAttribute="bottom" id="Kxa-CT-QGT"/>
+                                    <constraint firstAttribute="bottom" secondItem="BbI-J6-sOV" secondAttribute="bottom" id="M2S-iW-kel"/>
+                                    <constraint firstAttribute="width" constant="240" id="MTp-iG-iZX"/>
+                                    <constraint firstItem="cUv-ci-C3h" firstAttribute="leading" secondItem="ydQ-Kq-nRR" secondAttribute="leading" id="Myn-3r-Y6n"/>
+                                    <constraint firstAttribute="height" constant="50" id="YnA-91-bcT"/>
+                                    <constraint firstAttribute="trailing" secondItem="BbI-J6-sOV" secondAttribute="trailing" id="ZHQ-Ea-8O1"/>
+                                    <constraint firstItem="BbI-J6-sOV" firstAttribute="top" secondItem="ydQ-Kq-nRR" secondAttribute="top" id="tfa-IN-Yjg"/>
+                                    <constraint firstItem="BbI-J6-sOV" firstAttribute="leading" secondItem="ydQ-Kq-nRR" secondAttribute="leading" id="xbe-ya-Ooy"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z7C-wv-puV"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="z7C-wv-puV" firstAttribute="bottom" secondItem="BbI-J6-sOV" secondAttribute="bottom" id="31Y-AZ-GKg"/>
                             <constraint firstItem="aFj-jH-p5n" firstAttribute="top" secondItem="z7C-wv-puV" secondAttribute="top" id="7DI-U1-zix"/>
-                            <constraint firstItem="BbI-J6-sOV" firstAttribute="centerX" secondItem="I5r-H3-jbf" secondAttribute="centerX" id="ESP-8c-vHj"/>
                             <constraint firstItem="aFj-jH-p5n" firstAttribute="leading" secondItem="z7C-wv-puV" secondAttribute="leading" id="dtq-93-otZ"/>
+                            <constraint firstItem="ydQ-Kq-nRR" firstAttribute="centerX" secondItem="I5r-H3-jbf" secondAttribute="centerX" id="gs1-v8-d7b"/>
                             <constraint firstItem="z7C-wv-puV" firstAttribute="trailing" secondItem="aFj-jH-p5n" secondAttribute="trailing" id="oxb-NK-a7J"/>
-                            <constraint firstItem="z7C-wv-puV" firstAttribute="bottom" secondItem="BbI-J6-sOV" secondAttribute="bottom" id="pL6-GI-HC4"/>
+                            <constraint firstItem="ydQ-Kq-nRR" firstAttribute="bottom" secondItem="z7C-wv-puV" secondAttribute="bottom" id="qSq-g3-XPU"/>
                             <constraint firstItem="z7C-wv-puV" firstAttribute="bottom" secondItem="aFj-jH-p5n" secondAttribute="bottom" id="ywm-W2-vIu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="PHOTOS" image="photo" catalog="system" id="alq-mK-PxH" userLabel="PHOTOS"/>
                     <connections>
+                        <outlet property="ContainerVisualEfectButonsView" destination="ydQ-Kq-nRR" id="jSQ-mC-8q2"/>
+                        <outlet property="butonsStackView" destination="BbI-J6-sOV" id="hE0-yC-ygy"/>
                         <outlet property="collectionView" destination="Yb3-4y-Z5K" id="67K-3w-IjG"/>
+                        <outlet property="columnButton" destination="ESL-38-WHd" id="qxx-BB-ZRF"/>
+                        <outlet property="listButton" destination="pt2-Te-7Nn" id="6xz-QE-Y0l"/>
+                        <outlet property="smallColumnButton" destination="T7u-nE-24M" id="Kdk-ql-eQj"/>
+                        <outlet property="verySmallColumnButton" destination="xra-JR-Qcb" id="O6N-y0-jwB"/>
+                        <outletCollection property="llistaBotons" destination="T7u-nE-24M" collectionClass="NSMutableArray" id="T9A-xT-kTT"/>
+                        <outletCollection property="llistaBotons" destination="xra-JR-Qcb" collectionClass="NSMutableArray" id="rjb-zD-h06"/>
+                        <outletCollection property="llistaBotons" destination="pt2-Te-7Nn" collectionClass="NSMutableArray" id="LnI-sf-K9n"/>
+                        <outletCollection property="llistaBotons" destination="ESL-38-WHd" collectionClass="NSMutableArray" id="aC8-ak-0RB"/>
                         <segue destination="4gN-W7-5Pb" kind="presentation" identifier="segueToDetail" id="2XI-yS-hyG"/>
                     </connections>
                 </viewController>
@@ -390,9 +431,6 @@
         <image name="video.fill" catalog="system" width="128" height="82"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
