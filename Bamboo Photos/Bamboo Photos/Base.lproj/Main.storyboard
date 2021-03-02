@@ -255,14 +255,28 @@
         <!--RandomPicture-->
         <scene sceneID="I4E-5n-a4p">
             <objects>
-                <viewController id="CMU-BB-dpW" userLabel="RandomPicture" sceneMemberID="viewController">
+                <viewController id="CMU-BB-dpW" userLabel="RandomPicture" customClass="RandomPictureViewController" customModule="Bamboo_Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Thy-vG-1BA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KtZ-Yb-16z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qUv-oO-60K"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="qUv-oO-60K" firstAttribute="trailing" secondItem="KtZ-Yb-16z" secondAttribute="trailing" id="45t-uZ-GFB"/>
+                            <constraint firstItem="qUv-oO-60K" firstAttribute="bottom" secondItem="KtZ-Yb-16z" secondAttribute="bottom" id="5QB-WU-iaG"/>
+                            <constraint firstItem="KtZ-Yb-16z" firstAttribute="leading" secondItem="qUv-oO-60K" secondAttribute="leading" id="iSJ-3u-GG2"/>
+                            <constraint firstItem="KtZ-Yb-16z" firstAttribute="top" secondItem="qUv-oO-60K" secondAttribute="top" id="iqw-uy-GVz"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SafeScreen" image="video.fill" catalog="system" id="ElR-fo-HF5"/>
+                    <connections>
+                        <outlet property="viewImage" destination="KtZ-Yb-16z" id="9dQ-KU-M8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mus-KT-97G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -79,6 +79,7 @@
 		C538D27025E655CB00A770E0 /* dqMxDqdhg_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C538D23425E655CB00A770E0 /* dqMxDqdhg_4.jpg */; };
 		C538D27325E6758300A770E0 /* PicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D27225E6758300A770E0 /* PicturesViewModel.swift */; };
 		C538D27625E6790300A770E0 /* PicturesFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C538D27525E6790300A770E0 /* PicturesFullScreenViewController.swift */; };
+		C582331825EE49030056D174 /* RandomPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582331725EE49030056D174 /* RandomPictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,7 @@
 		C538D23425E655CB00A770E0 /* dqMxDqdhg_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dqMxDqdhg_4.jpg; sourceTree = "<group>"; };
 		C538D27225E6758300A770E0 /* PicturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewModel.swift; sourceTree = "<group>"; };
 		C538D27525E6790300A770E0 /* PicturesFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesFullScreenViewController.swift; sourceTree = "<group>"; };
+		C582331725EE49030056D174 /* RandomPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 		C538D1D925E3AD5200A770E0 /* Funcionalitats */ = {
 			isa = PBXGroup;
 			children = (
+				C582331625EE48BF0056D174 /* RandomPicture */,
 				C538D1F425E64A2D00A770E0 /* Common */,
 				C538D1E925E525A100A770E0 /* picturesCollection */,
 				C538D1DB25E3AE2100A770E0 /* Email */,
@@ -319,6 +322,14 @@
 				C538D23425E655CB00A770E0 /* dqMxDqdhg_4.jpg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		C582331625EE48BF0056D174 /* RandomPicture */ = {
+			isa = PBXGroup;
+			children = (
+				C582331725EE49030056D174 /* RandomPictureViewController.swift */,
+			);
+			path = RandomPicture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,6 +466,7 @@
 				C538D1C225E3A93D00A770E0 /* AppDelegate.swift in Sources */,
 				C538D1EB25E525D300A770E0 /* PicturesViewController.swift in Sources */,
 				C538D27625E6790300A770E0 /* PicturesFullScreenViewController.swift in Sources */,
+				C582331825EE49030056D174 /* RandomPictureViewController.swift in Sources */,
 				C538D1E525E3D21300A770E0 /* EmailViewController.swift in Sources */,
 				C538D1F625E64A8000A770E0 /* imageData.swift in Sources */,
 				C538D1EF25E531D400A770E0 /* PicturesCell.swift in Sources */,
