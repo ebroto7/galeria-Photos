@@ -178,6 +178,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="4gN-W7-5Pb" id="4ae-Ut-foK"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XE-Be-49a">
                                                 <rect key="frame" x="384" y="0.0" width="30" height="30"/>

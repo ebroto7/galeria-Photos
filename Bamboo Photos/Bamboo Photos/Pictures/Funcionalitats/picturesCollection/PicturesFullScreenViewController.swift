@@ -85,7 +85,39 @@ class PicturesFullScreenViewController: UIViewController {
     }
     
     
-    
-    
 }
 
+extension PicturesFullScreenViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            nameTextField.resignFirstResponder()
+        }
+        
+        return true
+    }
+}
+
+
+
+
+
+
+
+//_________________________________________________________
+//
+//extension EmailViewController: UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+////        print("has clicat return")
+//        if textField == nameTextfield {
+////            print("has introduit \(nameTextfield.text)")
+//            emailTextfield.becomeFirstResponder()
+//        } else if  textField == emailTextfield{
+////            print("has introdiut el \(emailTextfield.text)")
+//            emailTextfield.resignFirstResponder()
+//        } else {
+//            print("no se que has clicat")
+//        }
+//
+//        return true
+//    }
+//}
