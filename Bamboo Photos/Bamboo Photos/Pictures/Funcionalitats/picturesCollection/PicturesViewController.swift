@@ -242,7 +242,7 @@ extension PicturesViewController: UICollectionViewDataSource {      //per defect
     
     // número de cel.les de la collectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let numOfImages = imageData.numOfImages()
+        let numOfImages = ImageData.numOfImages()
         print("el nombre d'imatges és: \(numOfImages)")
         return numOfImages  // importem el numero de caselles en funció de la quantitat d'imateges que tenim a la carpeta
     }
@@ -256,7 +256,7 @@ extension PicturesViewController: UICollectionViewDataSource {      //per defect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifire, for: indexPath)
         if let picturesCell = cell as? PicturesCell {
             picturesCell.numberView.text = String(indexPath.row)        //mostra el número de la imatge segons indexpath.row
-            picturesCell.imageView.image = imageData.imageForPosition(indexPath.row)    //mostra la imatge segons indexpath.row
+            picturesCell.imageView.image = ImageData.imageForPosition(indexPath.row)    //mostra la imatge segons indexpath.row
  
             return picturesCell
         } else {
@@ -281,7 +281,7 @@ extension PicturesViewController: UICollectionViewDelegate {        // d'entrada
         performSegue(withIdentifier: "segueToDetail", sender: nil)
         
         
-        let imageName: String = imageData.imagesUrl?[selectedPosition].lastPathComponent ?? "imatge sensen nom"
+        let imageName: String = ImageData.imagesUrl?[selectedPosition].lastPathComponent ?? "imatge sensen nom"
         print("\(selectedPosition) : \(imageName)")
         
     }

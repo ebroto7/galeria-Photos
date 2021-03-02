@@ -26,10 +26,10 @@ class PicturesFullScreenViewController: UIViewController {
     @IBAction func switchAction(_ sender: Any) {
         guard let imageIndex: Int = PicturesViewModel.selectedIndex else { return }
         if likeSwitch.isOn {
-            imageData.likeImagePosition(imageIndex)
+            ImageData.likeImagePosition(imageIndex)
             print("t'ha agradat la imatge")
         } else {
-            imageData.dislikeImageAtPosition(imageIndex)
+            ImageData.dislikeImageAtPosition(imageIndex)
             print("ja no t'agrada")
         }
     }
@@ -47,28 +47,29 @@ class PicturesFullScreenViewController: UIViewController {
         
         // com que l'anterior "image" es opcional, el trenquem
         if let imageIndex: Int = PicturesViewModel.selectedIndex {
-            let image: UIImage? = imageData.imageForPosition(imageIndex)
+            let image: UIImage? = ImageData.imageForPosition(imageIndex)
             fullImageView.image = image
             
-            let title: String = imageData.getTitle(imageIndex)
+            let title: String = ImageData.getTitle(imageIndex)
             nameTextField.text = title
             
-            let islike: Bool = imageData.getLikeForPosition(imageIndex)
+            let islike: Bool = ImageData.getLikeForPosition(imageIndex)
             likeSwitch.isOn = islike
         }
         
-
         
-        //opció 1 per trencar l'opcional
-        print(PicturesViewModel.textProbes!)
+            nameTextField.resignFirstResponder()
         
-        //opciò 2
-        print(PicturesViewModel.textProbes ?? "no hi ha resultat")
-        
-        //opció 3
-        if let text: String = PicturesViewModel.textProbes {
-        print(text)
-        }
+//        //opció 1 per trencar l'opcional
+//        print(PicturesViewModel.textProbes!)
+//
+//        //opciò 2
+//        print(PicturesViewModel.textProbes ?? "no hi ha resultat")
+//
+//        //opció 3
+//        if let text: String = PicturesViewModel.textProbes {
+//        print(text)
+//        }
         
     }
     
@@ -77,7 +78,7 @@ class PicturesFullScreenViewController: UIViewController {
         
         if let imageIndex: Int = PicturesViewModel.selectedIndex,
            let title: String = nameTextField.text {
-            imageData.setTitle(title, position: imageIndex)
+            ImageData.setTitle(title, position: imageIndex)
             
         }
         

@@ -23,9 +23,9 @@ class RandomPictureViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //     Int.random(in: 0...imageData.numOfImages())       //generem un número aleatori en 0 i el mnumero de imatges que tenim
+        //     Int.random(in: 0...imageData.numOfImages())       //generem un número aleatori entre 0 i el número d'imatges que tenim
        
-     //  fem que al entrar a la pantalla ens retorni una imatge aleatoria
+     //  fem que a l'entrar a la pantalla ens retorni una imatge aleatoria
      //        let image = imageData.imageForPosition(Int.random(in: 0...imageData.numOfImages()))
      //        viewImage.image = image
              
@@ -35,7 +35,7 @@ class RandomPictureViewController: UIViewController {
         
 //        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(sayHello), userInfo: nil, repeats: true)        //  creem i activem el temporitzador un cop hem entrat a la pantalla, SISTEMA ANTIC AMB Target I #Selector
         
-        // el mateix timer d'abans escrit de manera mes "moderna"
+        // el mateix timer d'abans escrit de manera més "moderna"
         timer = Timer.scheduledTimer(withTimeInterval: 3.0,
                                      repeats: true,
                                      block: { _ in
@@ -45,7 +45,6 @@ class RandomPictureViewController: UIViewController {
     
     @objc func sayHello() {
         viewImage.image = getRandomPicture()
-//        timer?.invalidate()         // per aturar el timer
         print("hello")
     }
     
@@ -55,9 +54,9 @@ class RandomPictureViewController: UIViewController {
     
     func getRandomPicture() -> UIImage? {
         let minPictureIndex: Int = 0
-        let maxPictureIndex: Int = imageData.numOfImages()-1
+        let maxPictureIndex: Int = ImageData.numOfImages()-1
         let randomIndex: Int = Int.random(in: minPictureIndex...maxPictureIndex)
-        let image: UIImage? = imageData.imageForPosition(randomIndex)
+        let image: UIImage? = ImageData.imageForPosition(randomIndex)
         return image
     }
     
