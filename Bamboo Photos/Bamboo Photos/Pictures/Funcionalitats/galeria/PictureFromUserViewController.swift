@@ -11,6 +11,8 @@ import UIKit
 class PictureFromUserViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var switchEditable: UISwitch!
+    @IBOutlet weak var segmentCameraOrGalery: UISegmentedControl!
     
     
     override func viewDidLoad() {
@@ -22,39 +24,89 @@ class PictureFromUserViewController: UIViewController {
     @IBAction func button(_ sender: Any) {
         let picker = UIImagePickerController()
         
-        picker.delegate = self 
-        picker.allowsEditing = true
+        picker.delegate = self
+        
+        if switchEditable.isOn {
+            picker.allowsEditing = true
+        } else {
+        picker.allowsEditing = false
+        }
+        
         picker.mediaTypes = ["public.image"]
         
+        
+        if segmentCameraOrGalery.selectedSegmentIndex == 0 {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
         present(picker, animated: true, completion: { print("picker")})
-
+        
+        
+        
+        
+        
     }
-    
-    
     
 }
 
 extension PictureFromUserViewController: UIImagePickerControllerDelegate {
-
+    
+    //modifica el comportament el botó "cancel"
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        self.pickerController(picker, didSelect: nil)
+        
         print("cancel")
-       dismiss(animated: true)
+        dismiss(animated: true)
     }
-
+    
+    // modifica el control de la imatge
     public func imagePickerController(_ picker: UIImagePickerController,
                                       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        guard let image = info[.editedImage] as? UIImage else {
-          return
-//          return self.pickerController(picker, didSelect: nil)
+        
+        
+        if picker.allowsEditing == false {
+            guard let image = info[.originalImage] as? UIImage else {
+                dismiss(animated: true)
+                return
+            }
+            imageView.image = image
+        } else if picker.allowsEditing == true {
+            guard let image = info[.editedImage] as? UIImage else {
+                dismiss(animated: true)
+                
+                return
+            }
+            imageView.image = image
         }
-        imageView.image = image
-//        self.pickerController(picker, didSelect: image)
+       
+// escrit d'una altra manera
+//        var image: UIImage?
+//        if picker.allowsEditing {
+//            image = info[.editedImage] as? UIImage
+//        } else {
+//            image = info[.originalImage] as? UIImage
+//        }
+//        imageView.image = image
+
+        
+//resumint el mateix (escrit amb el el "if else" comprimit)
+//        let image = picker.allowsEditing ? info[.editedImage] : info[.originalImage]
+//        imageView.image = (image as? UIImage)
+        
+        
         dismiss(animated: true)
         print("picker hello")
     }
+    
+    
+    
+    
+    
 }
+
 
 extension PictureFromUserViewController: UINavigationControllerDelegate {
-
+    
 }
+

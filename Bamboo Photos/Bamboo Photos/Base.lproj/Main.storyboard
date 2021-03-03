@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -414,29 +415,67 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sos-uI-yCA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gWC-Hi-tp9">
+                                <rect key="frame" x="10" y="773" width="140" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="cta-jB-Awu"/>
+                                    <constraint firstAttribute="height" constant="30" id="faJ-Ov-Ev2"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Càmara"/>
+                                    <segment title="Galeria"/>
+                                </segments>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avx-37-HHd">
-                                <rect key="frame" x="339" y="773" width="65" height="30"/>
+                                <rect key="frame" x="304" y="773" width="100" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9Sx-Zk-InW"/>
+                                    <constraint firstAttribute="height" constant="30" id="f3X-GP-ZUl"/>
+                                </constraints>
                                 <state key="normal" title="Elige foto"/>
                                 <connections>
                                     <action selector="button:" destination="crJ-rw-v0y" eventType="touchUpInside" id="3Rw-qc-BgU"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fqW-4n-dGx">
+                                <rect key="frame" x="187" y="749.5" width="60" height="53.5"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLN-cO-edS">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editable?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuI-tJ-HWz">
+                                        <rect key="frame" x="0.0" y="39" width="60" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="hzz-Sz-QeG"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uqh-Qd-vw6"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstItem="Uqh-Qd-vw6" firstAttribute="trailing" secondItem="sos-uI-yCA" secondAttribute="trailing" id="0ol-KT-Hi2"/>
-                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="trailing" secondItem="Avx-37-HHd" secondAttribute="trailing" constant="10" id="3zu-3N-Jb3"/>
+                            <constraint firstItem="gWC-Hi-tp9" firstAttribute="leading" secondItem="Uqh-Qd-vw6" secondAttribute="leading" constant="10" id="36K-2y-Rnh"/>
                             <constraint firstItem="sos-uI-yCA" firstAttribute="leading" secondItem="Uqh-Qd-vw6" secondAttribute="leading" id="6bp-gu-C2v"/>
+                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="bottom" secondItem="Avx-37-HHd" secondAttribute="bottom" constant="10" id="87U-TK-h9b"/>
                             <constraint firstItem="Uqh-Qd-vw6" firstAttribute="bottom" secondItem="sos-uI-yCA" secondAttribute="bottom" id="9uR-cC-cCu"/>
+                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="trailing" secondItem="Avx-37-HHd" secondAttribute="trailing" constant="10" id="Edc-B8-P7B"/>
                             <constraint firstItem="sos-uI-yCA" firstAttribute="top" secondItem="Uqh-Qd-vw6" secondAttribute="top" id="GvK-st-gUa"/>
-                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="bottom" secondItem="Avx-37-HHd" secondAttribute="bottom" constant="10" id="OMQ-pL-9Mj"/>
+                            <constraint firstItem="fqW-4n-dGx" firstAttribute="centerX" secondItem="o5g-3D-NRZ" secondAttribute="centerX" constant="10" id="PNM-ob-Dbn"/>
+                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="bottom" secondItem="fqW-4n-dGx" secondAttribute="bottom" constant="10" id="QDL-YD-qNO"/>
+                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="bottom" secondItem="gWC-Hi-tp9" secondAttribute="bottom" constant="10" id="cou-7k-jnX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Galeria" image="photo.on.rectangle.fill" catalog="system" id="krl-3g-FZK"/>
                     <connections>
                         <outlet property="imageView" destination="sos-uI-yCA" id="pXA-nL-pZ7"/>
+                        <outlet property="segmentCameraOrGalery" destination="gWC-Hi-tp9" id="2eK-Px-MEX"/>
+                        <outlet property="switchEditable" destination="zLN-cO-edS" id="PFI-1h-xyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAd-4z-W3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
