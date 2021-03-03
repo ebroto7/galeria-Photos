@@ -17,6 +17,7 @@ class RandomPictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .black          // canviem per codi el color de fons
         viewImage.image = getRandomPicture()
       
     }
@@ -36,7 +37,7 @@ class RandomPictureViewController: UIViewController {
 //        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(sayHello), userInfo: nil, repeats: true)        //  creem i activem el temporitzador un cop hem entrat a la pantalla, SISTEMA ANTIC AMB Target I #Selector
         
         // el mateix timer d'abans escrit de manera més "moderna"
-        timer = Timer.scheduledTimer(withTimeInterval: 3.0,
+        timer = Timer.scheduledTimer(withTimeInterval: 5.0,
                                      repeats: true,
                                      block: { _ in
                                         self.sayHello()
@@ -44,8 +45,16 @@ class RandomPictureViewController: UIViewController {
     }
     
     @objc func sayHello() {
-        viewImage.image = getRandomPicture()
-        print("hello")
+        UIView.transition(with: viewImage,
+                          duration: 1.5,
+                          options: [.transitionCrossDissolve],
+                          animations: { self.viewImage.image = self.getRandomPicture() },
+                          completion: { _ in
+                            print("hello")
+                          })
+        
+//        viewImage.image = getRandomPicture()
+//        print("hello")
     }
     
     override func viewDidDisappear(_ animated: Bool) {

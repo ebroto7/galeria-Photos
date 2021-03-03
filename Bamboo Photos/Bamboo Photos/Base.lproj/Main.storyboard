@@ -406,14 +406,38 @@
         <!--Galeria-->
         <scene sceneID="bmT-cc-8Ba">
             <objects>
-                <viewController id="crJ-rw-v0y" userLabel="Galeria" sceneMemberID="viewController">
+                <viewController id="crJ-rw-v0y" userLabel="Galeria" customClass="PictureFromUserViewController" customModule="Bamboo_Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o5g-3D-NRZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sos-uI-yCA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avx-37-HHd">
+                                <rect key="frame" x="339" y="773" width="65" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Elige foto"/>
+                                <connections>
+                                    <action selector="button:" destination="crJ-rw-v0y" eventType="touchUpInside" id="3Rw-qc-BgU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Uqh-Qd-vw6"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="trailing" secondItem="sos-uI-yCA" secondAttribute="trailing" id="0ol-KT-Hi2"/>
+                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="trailing" secondItem="Avx-37-HHd" secondAttribute="trailing" constant="10" id="3zu-3N-Jb3"/>
+                            <constraint firstItem="sos-uI-yCA" firstAttribute="leading" secondItem="Uqh-Qd-vw6" secondAttribute="leading" id="6bp-gu-C2v"/>
+                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="bottom" secondItem="sos-uI-yCA" secondAttribute="bottom" id="9uR-cC-cCu"/>
+                            <constraint firstItem="sos-uI-yCA" firstAttribute="top" secondItem="Uqh-Qd-vw6" secondAttribute="top" id="GvK-st-gUa"/>
+                            <constraint firstItem="Uqh-Qd-vw6" firstAttribute="bottom" secondItem="Avx-37-HHd" secondAttribute="bottom" constant="10" id="OMQ-pL-9Mj"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Galeria" image="photo.on.rectangle.fill" catalog="system" id="krl-3g-FZK"/>
+                    <connections>
+                        <outlet property="imageView" destination="sos-uI-yCA" id="pXA-nL-pZ7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAd-4z-W3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
