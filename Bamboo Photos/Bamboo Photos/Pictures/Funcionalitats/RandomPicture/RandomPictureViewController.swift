@@ -74,7 +74,7 @@ class RandomPictureViewController: UIViewController {
 //    }
     
     func getRandomPictureIndex() -> Int {
-        print("el meu projecte")
+        print("el meu projecte ROCKY")
         let randomIndex = Int.random(in: 0...ImageData.numOfImages()-1)
         
         return randomIndex
