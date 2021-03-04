@@ -10,6 +10,7 @@ import Foundation
 
 class RandomPictureViewController: UIViewController {
 
+    @IBOutlet weak var nameTextView: UITextField!
     @IBOutlet weak var viewImage: UIImageView!
     var timer: Timer?
     
@@ -50,6 +51,13 @@ class RandomPictureViewController: UIViewController {
                           options: [.transitionCrossDissolve],
                           animations: { self.viewImage.image = self.getRandomPicture() },
                           completion: { _ in
+                            if let imageIndex: Int = PicturesViewModel.selectedIndex {
+                                let title: String = ImageData.getTitle(imageIndex)
+                                self.nameTextView.text = title
+                            }
+//                            let image = self.getRandomPicture()
+//
+//                            self.nameTextView.text = ImageData.
                             print("hello")
                           })
         

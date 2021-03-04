@@ -164,7 +164,7 @@ class PicturesViewController: UIViewController {
         changeViewByButton(tag: 0)
         
        
-        PicturesViewModel.textProbes = "Hola"     //probando cosas
+//        PicturesViewModel.textProbes = "Hola"     //probando cosas
     }
     
     

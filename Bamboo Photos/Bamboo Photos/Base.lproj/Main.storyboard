@@ -267,18 +267,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KtZ-Yb-16z">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="titulo" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-Vt-RqM">
+                                <rect key="frame" x="343" y="769" width="61" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qUv-oO-60K"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="qUv-oO-60K" firstAttribute="trailing" secondItem="KtZ-Yb-16z" secondAttribute="trailing" id="45t-uZ-GFB"/>
                             <constraint firstItem="qUv-oO-60K" firstAttribute="bottom" secondItem="KtZ-Yb-16z" secondAttribute="bottom" id="5QB-WU-iaG"/>
+                            <constraint firstItem="qUv-oO-60K" firstAttribute="trailing" secondItem="czQ-Vt-RqM" secondAttribute="trailing" constant="10" id="S4d-7R-F5g"/>
+                            <constraint firstItem="qUv-oO-60K" firstAttribute="bottom" secondItem="czQ-Vt-RqM" secondAttribute="bottom" constant="10" id="Xp6-ym-EJm"/>
                             <constraint firstItem="KtZ-Yb-16z" firstAttribute="leading" secondItem="qUv-oO-60K" secondAttribute="leading" id="iSJ-3u-GG2"/>
                             <constraint firstItem="KtZ-Yb-16z" firstAttribute="top" secondItem="qUv-oO-60K" secondAttribute="top" id="iqw-uy-GVz"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SafeScreen" image="video.fill" catalog="system" id="ElR-fo-HF5"/>
                     <connections>
+                        <outlet property="nameTextView" destination="czQ-Vt-RqM" id="NgJ-RQ-JWd"/>
                         <outlet property="viewImage" destination="KtZ-Yb-16z" id="9dQ-KU-M8a"/>
                     </connections>
                 </viewController>

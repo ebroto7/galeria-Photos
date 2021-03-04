@@ -10,6 +10,8 @@ import UIKit
 
 class PictureFromUserViewController: UIViewController {
     
+    private let cameraType = 0
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var switchEditable: UISwitch!
     @IBOutlet weak var segmentCameraOrGalery: UISegmentedControl!
@@ -35,16 +37,23 @@ class PictureFromUserViewController: UIViewController {
         picker.mediaTypes = ["public.image"]
         
         
-        if segmentCameraOrGalery.selectedSegmentIndex == 0 {
-            picker.sourceType = .camera
+        
+        if segmentCameraOrGalery.selectedSegmentIndex == cameraType {       //private let cameraType = 0 => generem una constant per evitar tenir un numero "tirat" per aqui que podem no saber a que es refereix
+            if UIImagePickerController.isSourceTypeAvailable(.camera) == true {
+                picker.sourceType = .camera
+            } else {
+                picker.sourceType = .photoLibrary
+            }
+            
+            
+            
         } else {
             picker.sourceType = .photoLibrary
         }
         
         present(picker, animated: true, completion: { print("picker")})
         
-        
-        
+       
         
         
     }
