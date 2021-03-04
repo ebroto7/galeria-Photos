@@ -272,16 +272,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOu-YW-bo0">
+                                <rect key="frame" x="10" y="54" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Zwx-cN-aUo"/>
+                                    <constraint firstAttribute="height" constant="50" id="sPf-SN-Rlc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qUv-oO-60K"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="qUv-oO-60K" firstAttribute="trailing" secondItem="KtZ-Yb-16z" secondAttribute="trailing" id="45t-uZ-GFB"/>
                             <constraint firstItem="qUv-oO-60K" firstAttribute="bottom" secondItem="KtZ-Yb-16z" secondAttribute="bottom" id="5QB-WU-iaG"/>
+                            <constraint firstItem="KOu-YW-bo0" firstAttribute="top" secondItem="qUv-oO-60K" secondAttribute="top" constant="10" id="5bg-7s-Jne"/>
                             <constraint firstItem="qUv-oO-60K" firstAttribute="trailing" secondItem="czQ-Vt-RqM" secondAttribute="trailing" constant="10" id="S4d-7R-F5g"/>
                             <constraint firstItem="qUv-oO-60K" firstAttribute="bottom" secondItem="czQ-Vt-RqM" secondAttribute="bottom" constant="10" id="Xp6-ym-EJm"/>
                             <constraint firstItem="KtZ-Yb-16z" firstAttribute="leading" secondItem="qUv-oO-60K" secondAttribute="leading" id="iSJ-3u-GG2"/>
                             <constraint firstItem="KtZ-Yb-16z" firstAttribute="top" secondItem="qUv-oO-60K" secondAttribute="top" id="iqw-uy-GVz"/>
+                            <constraint firstItem="KOu-YW-bo0" firstAttribute="leading" secondItem="qUv-oO-60K" secondAttribute="leading" constant="10" id="opK-2L-kY4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SafeScreen" image="video.fill" catalog="system" id="ElR-fo-HF5"/>
