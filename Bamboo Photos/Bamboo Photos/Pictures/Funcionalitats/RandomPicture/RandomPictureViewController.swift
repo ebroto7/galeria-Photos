@@ -47,7 +47,7 @@ class RandomPictureViewController: UIViewController {
     
     @objc func sayHello() {
         UIView.transition(with: viewImage,
-                          duration: 100.5,
+                          duration: 1.5,
                           options: [.transitionCrossDissolve],
                           animations: {
                             let randomNumber = self.getRandomPictureIndex()
@@ -74,9 +74,7 @@ class RandomPictureViewController: UIViewController {
 //    }
     
     func getRandomPictureIndex() -> Int {
-        print("el meu projecte, hola que tal?")
         let randomIndex = Int.random(in: 0...ImageData.numOfImages()-1)
-        
         return randomIndex
     }
     
