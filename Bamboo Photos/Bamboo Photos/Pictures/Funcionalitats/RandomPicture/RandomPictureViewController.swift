@@ -10,6 +10,7 @@ import Foundation
 
 class RandomPictureViewController: UIViewController {
 
+    @IBOutlet weak var titleContainerView: UIView!
     @IBOutlet weak var viewImage: UIImageView!
     var timer: Timer?
     
@@ -18,9 +19,19 @@ class RandomPictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let cornerRadius: CGFloat = 30
+        titleContainerView.layer.cornerRadius = cornerRadius
+        
         self.view.backgroundColor = .black          // canviem per codi el color de fons
       // AAA  viewImage.image = getRandomPicture()
       
+        let randomNumber = getRandomPictureIndex()
+        let image = ImageData.imageForPosition(randomNumber)
+        let title = ImageData.getTitle(randomNumber)
+        viewImage.image = image
+        labelTitulo.text = title
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

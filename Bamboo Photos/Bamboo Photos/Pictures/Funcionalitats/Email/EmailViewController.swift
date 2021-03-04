@@ -79,6 +79,7 @@ class EmailViewController: UIViewController {
     
 // guardem la info al disc dur
     func saveToUserDefaults() {
+        
 //        let userName: String = nameTextfield.text!
 //        let userEmail = emailTextfield.text!
 //        UserDefaults.standard.setValue(userName, forKey: "name")
