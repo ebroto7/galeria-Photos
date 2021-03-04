@@ -10,16 +10,16 @@ import Foundation
 
 class RandomPictureViewController: UIViewController {
 
-    @IBOutlet weak var nameTextView: UITextField!
     @IBOutlet weak var viewImage: UIImageView!
     var timer: Timer?
     
+    @IBOutlet var labelTitulo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .black          // canviem per codi el color de fons
-        viewImage.image = getRandomPicture()
+      // AAA  viewImage.image = getRandomPicture()
       
     }
     
@@ -49,32 +49,33 @@ class RandomPictureViewController: UIViewController {
         UIView.transition(with: viewImage,
                           duration: 1.5,
                           options: [.transitionCrossDissolve],
-                          animations: { self.viewImage.image = self.getRandomPicture() },
-                          completion: { _ in
-                            if let imageIndex: Int = PicturesViewModel.selectedIndex {
-                                let title: String = ImageData.getTitle(imageIndex)
-                                self.nameTextView.text = title
-                            }
-//                            let image = self.getRandomPicture()
-//
-//                            self.nameTextView.text = ImageData.
-                            print("hello")
+                          animations: {
+                            let randomNumber = self.getRandomPictureIndex()
+                            let image = ImageData.imageForPosition(randomNumber)
+                            let title = ImageData.getTitle(randomNumber)
+                            self.viewImage.image = image
+                            self.labelTitulo.text = title
+                            
+                          },
+                          completion: {_ in print("hello")
                           })
-        
-//        viewImage.image = getRandomPicture()
-//        print("hello")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()         //aturem el temporitzador quan hem sortit de la pantalla
     }
     
-    func getRandomPicture() -> UIImage? {
-        let minPictureIndex: Int = 0
-        let maxPictureIndex: Int = ImageData.numOfImages()-1
-        let randomIndex: Int = Int.random(in: minPictureIndex...maxPictureIndex)
-        let image: UIImage? = ImageData.imageForPosition(randomIndex)
-        return image
+//    func getRandomPicture() -> UIImage? {
+//        let minPictureIndex: Int = 0
+//        let maxPictureIndex: Int = ImageData.numOfImages()-1
+//        let randomIndex: Int = Int.random(in: minPictureIndex...maxPictureIndex)
+//        let image: UIImage? = ImageData.imageForPosition(randomIndex)
+//        return image
+//    }
+    
+    func getRandomPictureIndex() -> Int {
+        let randomIndex = Int.random(in: 0...ImageData.numOfImages()-1)
+        return randomIndex
     }
     
 }
