@@ -246,8 +246,8 @@
 				C538D1EA25E525D300A770E0 /* PicturesViewController.swift */,
 				C538D1EE25E531D400A770E0 /* PicturesCell.swift */,
 				C538D1F125E5323C00A770E0 /* PicturesCell.xib */,
-				C538D27225E6758300A770E0 /* PicturesViewModel.swift */,
 				C538D27525E6790300A770E0 /* PicturesFullScreenViewController.swift */,
+				C538D27225E6758300A770E0 /* PicturesViewModel.swift */,
 			);
 			path = picturesCollection;
 			sourceTree = "<group>";

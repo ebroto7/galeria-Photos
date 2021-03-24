@@ -12,6 +12,7 @@ class PictureFromUserViewController: UIViewController {
     
     private let cameraType = 0
     
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var switchEditable: UISwitch!
     @IBOutlet weak var segmentCameraOrGalery: UISegmentedControl!

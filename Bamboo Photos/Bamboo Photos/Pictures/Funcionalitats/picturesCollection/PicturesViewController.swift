@@ -32,7 +32,7 @@ class PicturesViewController: UIViewController {
     //com que ara modifiquem l'ample de les cel.les en funció de les imatges que volem en cada vista, ja no utilitzem la variable
     
     private let reuseIdentifire = String(describing: PicturesCell.self) //cada reuseIdentifier es dirà com el seva Class, així evites problemes (en el nostre cas no ho necesitem), podriem tenir diferents tipus de cel.les (per exeple cel.la de de foto i cel.la de text)
-    private var numOfHorzontalCells: CGFloat = 5.0
+    private var numOfHorizontalCells: CGFloat = 5.0
     private var marginBetweenCells: CGFloat = 5.0
     
     
@@ -121,23 +121,23 @@ class PicturesViewController: UIViewController {
         
     }
     
-    func changeViewByButton(tag: Int)  {
+    func changeViewByButton(tag: Int)  {        // recorda que a l'estorybord s'ha d'assignar el "tag" a tots els buttons
         switch tag {
         case 0 :
             print("1r - botó")
-            numOfHorzontalCells = 1
+            numOfHorizontalCells = 1
    
         case 1:
             print("2n - botó")
-            numOfHorzontalCells = 2
+            numOfHorizontalCells = 2
    
         case 2:
             print("3r - botó")
-            numOfHorzontalCells = 4
+            numOfHorizontalCells = 4
        
         case 3:
             print("4t - botó")
-            numOfHorzontalCells = 8
+            numOfHorizontalCells = 8
           
         default:
             print("hola")
@@ -269,7 +269,7 @@ extension PicturesViewController: UICollectionViewDataSource {      //per defect
 
 extension PicturesViewController: UICollectionViewDelegate {        // d'entrada no te preestablerts necessàris com passa amb la extensió dataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//       per veure el numero de indexPath
+//       per veure el número de indexPath
 //        let indexPath = indexPath
 //        print(indexPath)
         
@@ -277,8 +277,9 @@ extension PicturesViewController: UICollectionViewDelegate {        // d'entrada
         let selectedPosition: Int = indexPath.row
         //per traspasar la informació  //en aquest cas guardem el numero de la imatge que selecciona l'usuari
         PicturesViewModel.selectedIndex = selectedPosition
-        // per enllaçar la imatge amb la pantalla de detall
-        performSegue(withIdentifier: "segueToDetail", sender: nil)
+        
+        // per enllaçar la imatge seleccionada amb la pantalla de detall
+        performSegue(withIdentifier: "segueToDetail", sender: nil)      //segueToDetail es ñ'identificador de l'enllaç entre PicturesViewController i PicturesFullScreenViewController
         
         
         let imageName: String = ImageData.imagesUrl?[selectedPosition].lastPathComponent ?? "imatge sensen nom"
@@ -303,7 +304,7 @@ extension PicturesViewController: UICollectionViewDelegateFlowLayout {  // dona 
         
         //tenint en compte els marges
         let collectionWidth: CGFloat = collectionView.frame.size.width
-        let cellWidth: CGFloat = (collectionWidth - (numOfHorzontalCells-1)*marginBetweenCells) / numOfHorzontalCells
+        let cellWidth: CGFloat = (collectionWidth - (numOfHorizontalCells-1)*marginBetweenCells) / numOfHorizontalCells
         return CGSize(width: cellWidth, height: cellWidth)
         
         
@@ -320,13 +321,5 @@ extension PicturesViewController: UICollectionViewDelegateFlowLayout {  // dona 
         let spaceInteritem = marginBetweenCells
         return spaceInteritem
     }
-    
-    
-    
-    
-//--------------------- PROBES ---------------------
-    
-    
-    
     
 }
